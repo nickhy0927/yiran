@@ -2,8 +2,8 @@ package com.yiran.payorder.domain;
 
 import java.util.Date;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.netfinworks.common.util.money.Money;
 import com.yiran.paychannel.enums.FundChannelApiType;
@@ -12,7 +12,6 @@ import com.yiran.paychannel.enums.FundChannelApiType;
  * <p>渠道支付结果对象</p>
  */
 public class ChannelFundResult extends ChannelResult {
-    private static final long serialVersionUID = -5232985693057220878L;
 
     /** 实际金额 */
     private Money             realAmount;

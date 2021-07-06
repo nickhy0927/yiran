@@ -14,6 +14,7 @@ import java.io.InputStream;
  * @date 2018/4/26
  * @since 1.0.0
  */
+@SuppressWarnings("all")
 public class CustomKeyStoreParam extends AbstractKeyStoreParam {
 
     /**

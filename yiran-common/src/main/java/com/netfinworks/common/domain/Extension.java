@@ -1,4 +1,4 @@
-package com.yiran.paychannel.vo;
+package com.netfinworks.common.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;

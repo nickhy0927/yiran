@@ -75,11 +75,11 @@ public class ResultWrapper<T> implements Serializable {
      * @param absResultEnum 抽象响应枚举
      * @return ResultWrapper
      */
-    public static ResultWrapper newInstance(AbsResultEnum absResultEnum) {
+    public static ResultWrapper<?> newInstance(AbsResultEnum absResultEnum) {
         if (null == absResultEnum) {
             absResultEnum = DefaultResultEnum.SUCCESS;
         }
-        return new ResultWrapper(absResultEnum.getCode(), absResultEnum.getMessage());
+        return new ResultWrapper<>(absResultEnum.getCode(), absResultEnum.getMessage());
     }
 
     /**
@@ -89,9 +89,9 @@ public class ResultWrapper<T> implements Serializable {
      * @param message 响应消息
      * @return ResultWrapper
      */
-    public static ResultWrapper newInstance(String code, String message) {
+    public static ResultWrapper<?> newInstance(String code, String message) {
         assert code != null && message != null;
-        return new ResultWrapper(code, message);
+        return new ResultWrapper<>(code, message);
     }
 
     /**

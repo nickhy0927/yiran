@@ -27,6 +27,7 @@ import com.yiran.weixin.response.TextMessageResponse;
  * @author 许盼
  *
  */
+@SuppressWarnings("all")
 public class MessageUtil {
 	 /** 
      * 返回消息类型：文本 

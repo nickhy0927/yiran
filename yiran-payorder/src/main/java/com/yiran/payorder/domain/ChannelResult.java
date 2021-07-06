@@ -1,7 +1,7 @@
 package com.yiran.payorder.domain;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 
 import com.netfinworks.biz.common.util.BaseResult;
 import com.yiran.paychannel.enums.FundChannelApiType;

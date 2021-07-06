@@ -1,14 +1,15 @@
 package com.yiran.paychannel.domain;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import java.util.Date;
+import java.util.List;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.yiran.common.base.BaseEntity;
 import com.yiran.paychannel.enums.FundChannelApiType;
 import com.yiran.paychannel.enums.Status;
 import com.yiran.paychannel.service.ChannelProperty;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * 资金渠道表 tm_fund_channel
@@ -16,10 +17,9 @@ import java.util.List;
  * @author yiran
  * @date 2019-04-19
  */
-public class TmFundChannel extends BaseEntity
-{
+public class TmFundChannel extends BaseEntity {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** 渠道编码 */
 	private String fundChannelCode;
 	/** 渠道名称 */
@@ -72,201 +72,181 @@ public class TmFundChannel extends BaseEntity
 	 * 维护期
 	 */
 	List<TmFundChannelMaintain> maintainList;
-	
+
 	/** 所属机构 */
-    private TmFundChannelInst             institution;
+	private TmFundChannelInst institution;
 
-    /** 结算信息 */
-    private TmFundChannelSettle           settleInfo;
-    
-    /** 是否支持查询 */
-    private boolean                     querySupported        = false;
-    /** 是否支持退款 */
-    private boolean                     refundSupported       = false;
-    /** 是否支持手工退款 */
-    private boolean                     manualRefundSupported = false;
-    
-    /** 渠道扩展属性 */
-    private ChannelProperty             channelProperty;
-    
-    public TmFundChannelApi getApiByType(FundChannelApiType apiType) {
-        if (null == this.apiList) {
-            return null;
-        }
+	/** 结算信息 */
+	private TmFundChannelSettle settleInfo;
 
-        for (TmFundChannelApi api : getApiList()) {
-            if (apiType.getCode().equals(api.getApiType())) {
-                return api;
-            }
-        }
-        return null;
-    }
-    
-	public void setFundChannelCode(String fundChannelCode) 
-	{
+	/** 是否支持查询 */
+	private boolean querySupported = false;
+	/** 是否支持退款 */
+	private boolean refundSupported = false;
+	/** 是否支持手工退款 */
+	private boolean manualRefundSupported = false;
+
+	/** 渠道扩展属性 */
+	private ChannelProperty channelProperty;
+
+	public TmFundChannelApi getApiByType(FundChannelApiType apiType) {
+		if (null == this.apiList) {
+			return null;
+		}
+
+		for (TmFundChannelApi api : getApiList()) {
+			if (apiType.getCode().equals(api.getApiType())) {
+				return api;
+			}
+		}
+		return null;
+	}
+
+	public void setFundChannelCode(String fundChannelCode) {
 		this.fundChannelCode = fundChannelCode;
 	}
 
-	public String getFundChannelCode() 
-	{
+	public String getFundChannelCode() {
 		return fundChannelCode;
 	}
-	public void setName(String name) 
-	{
+
+	public void setName(String name) {
 		this.name = name;
 	}
 
-	public String getName() 
-	{
+	public String getName() {
 		return name;
 	}
-	public void setDescription(String description) 
-	{
+
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getDescription() 
-	{
+	public String getDescription() {
 		return description;
 	}
-	public void setInstCode(String instCode) 
-	{
+
+	public void setInstCode(String instCode) {
 		this.instCode = instCode;
 	}
 
-	public String getInstCode() 
-	{
+	public String getInstCode() {
 		return instCode;
 	}
-	public void setBizType(String bizType) 
-	{
+
+	public void setBizType(String bizType) {
 		this.bizType = bizType;
 	}
 
-	public String getBizType() 
-	{
+	public String getBizType() {
 		return bizType;
 	}
-	public void setPayMode(String payMode) 
-	{
+
+	public void setPayMode(String payMode) {
 		this.payMode = payMode;
 	}
 
-	public String getPayMode() 
-	{
+	public String getPayMode() {
 		return payMode;
 	}
-	public void setSignedCrop(String signedCrop) 
-	{
+
+	public void setSignedCrop(String signedCrop) {
 		this.signedCrop = signedCrop;
 	}
 
-	public String getSignedCrop() 
-	{
+	public String getSignedCrop() {
 		return signedCrop;
 	}
-	public void setStatus(String status) 
-	{
+
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public String getStatus() 
-	{
+	public String getStatus() {
 		return status;
 	}
-	public void setValidFrom(Date validFrom) 
-	{
+
+	public void setValidFrom(Date validFrom) {
 		this.validFrom = validFrom;
 	}
 
-	public Date getValidFrom() 
-	{
+	public Date getValidFrom() {
 		return validFrom;
 	}
-	public void setValidTo(Date validTo) 
-	{
+
+	public void setValidTo(Date validTo) {
 		this.validTo = validTo;
 	}
 
-	public Date getValidTo() 
-	{
+	public Date getValidTo() {
 		return validTo;
 	}
-	public void setMaxAmount(String maxAmount) 
-	{
+
+	public void setMaxAmount(String maxAmount) {
 		this.maxAmount = maxAmount;
 	}
 
-	public String getMaxAmount() 
-	{
+	public String getMaxAmount() {
 		return maxAmount;
 	}
-	public void setMinAmount(String minAmount) 
-	{
+
+	public void setMinAmount(String minAmount) {
 		this.minAmount = minAmount;
 	}
 
-	public String getMinAmount() 
-	{
+	public String getMinAmount() {
 		return minAmount;
 	}
-	public void setExpectArriveTime(String expectArriveTime) 
-	{
+
+	public void setExpectArriveTime(String expectArriveTime) {
 		this.expectArriveTime = expectArriveTime;
 	}
 
-	public String getExpectArriveTime() 
-	{
+	public String getExpectArriveTime() {
 		return expectArriveTime;
 	}
-	public void setGmtCreate(Date gmtCreate) 
-	{
+
+	public void setGmtCreate(Date gmtCreate) {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public Date getGmtCreate() 
-	{
+	public Date getGmtCreate() {
 		return gmtCreate;
 	}
-	public void setGmtModified(Date gmtModified) 
-	{
+
+	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
 
-	public Date getGmtModified() 
-	{
+	public Date getGmtModified() {
 		return gmtModified;
 	}
-	public void setMemo(String memo) 
-	{
+
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
 
-	public String getMemo() 
-	{
+	public String getMemo() {
 		return memo;
 	}
-	public void setChannelMode(String channelMode) 
-	{
+
+	public void setChannelMode(String channelMode) {
 		this.channelMode = channelMode;
 	}
 
-	public String getChannelMode() 
-	{
+	public String getChannelMode() {
 		return channelMode;
 	}
-	public void setPriority(Integer priority) 
-	{
+
+	public void setPriority(Integer priority) {
 		this.priority = priority;
 	}
 
-	public Integer getPriority() 
-	{
+	public Integer getPriority() {
 		return priority;
 	}
-	
 
-    public List<TmFundChannelApi> getApiList() {
+	public List<TmFundChannelApi> getApiList() {
 		return apiList;
 	}
 
@@ -297,7 +277,6 @@ public class TmFundChannel extends BaseEntity
 	public void setMaintainList(List<TmFundChannelMaintain> maintainList) {
 		this.maintainList = maintainList;
 	}
-	
 
 	public TmFundChannelInst getInstitution() {
 		return institution;
@@ -307,7 +286,6 @@ public class TmFundChannel extends BaseEntity
 		this.institution = institution;
 	}
 
-	
 	public TmFundChannelSettle getSettleInfo() {
 		return settleInfo;
 	}
@@ -316,7 +294,6 @@ public class TmFundChannel extends BaseEntity
 		this.settleInfo = settleInfo;
 	}
 
-	
 	public boolean isQuerySupported() {
 		return querySupported;
 	}
@@ -342,43 +319,27 @@ public class TmFundChannel extends BaseEntity
 	}
 
 	public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("fundChannelCode", getFundChannelCode())
-            .append("name", getName())
-            .append("description", getDescription())
-            .append("instCode", getInstCode())
-            .append("bizType", getBizType())
-            .append("payMode", getPayMode())
-            .append("signedCrop", getSignedCrop())
-            .append("status", getStatus())
-            .append("validFrom", getValidFrom())
-            .append("validTo", getValidTo())
-            .append("maxAmount", getMaxAmount())
-            .append("minAmount", getMinAmount())
-            .append("expectArriveTime", getExpectArriveTime())
-            .append("gmtCreate", getGmtCreate())
-            .append("gmtModified", getGmtModified())
-            .append("memo", getMemo())
-            .append("channelMode", getChannelMode())
-            .append("priority", getPriority())
-            .append("apiList", getApiList())
-            .append("extList", getExtList())
-            .append("instList", getInstList())
-            .append("maintainList", getMaintainList())
-            .append("institution", getInstitution())
-            .append("settleInfo", getSettleInfo())
-            .append("querySupported", isQuerySupported())
-            .append("refundSupported", isRefundSupported())
-            .append("manualRefundSupported", isManualRefundSupported())
-            .toString();
-    }
-	
+		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append("fundChannelCode", getFundChannelCode())
+				.append("name", getName()).append("description", getDescription()).append("instCode", getInstCode())
+				.append("bizType", getBizType()).append("payMode", getPayMode()).append("signedCrop", getSignedCrop())
+				.append("status", getStatus()).append("validFrom", getValidFrom()).append("validTo", getValidTo())
+				.append("maxAmount", getMaxAmount()).append("minAmount", getMinAmount())
+				.append("expectArriveTime", getExpectArriveTime()).append("gmtCreate", getGmtCreate())
+				.append("gmtModified", getGmtModified()).append("memo", getMemo())
+				.append("channelMode", getChannelMode()).append("priority", getPriority())
+				.append("apiList", getApiList()).append("extList", getExtList()).append("instList", getInstList())
+				.append("maintainList", getMaintainList()).append("institution", getInstitution())
+				.append("settleInfo", getSettleInfo()).append("querySupported", isQuerySupported())
+				.append("refundSupported", isRefundSupported())
+				.append("manualRefundSupported", isManualRefundSupported()).toString();
+	}
+
 	public TmFundChannelApi getApi() {
-        if (apiList != null && apiList.size() > 0) {
-            return apiList.get(0);
-        }
-        return null;
-    }
+		if (apiList != null && apiList.size() > 0) {
+			return apiList.get(0);
+		}
+		return null;
+	}
 
 	public ChannelProperty getChannelProperty() {
 		return channelProperty;
@@ -387,13 +348,13 @@ public class TmFundChannel extends BaseEntity
 	public void setChannelProperty(ChannelProperty channelProperty) {
 		this.channelProperty = channelProperty;
 	}
-	 public boolean isAvailable() {
-	        return isValid();
-	    }
-	    
-	    public boolean isValid() {
-	        Date curr = new Date(System.currentTimeMillis());
-	        return Status.VALID.getCode().equals(this.status) && curr.before(this.validTo)
-	               && curr.after(this.validFrom);
-	    }
+
+	public boolean isAvailable() {
+		return isValid();
+	}
+
+	public boolean isValid() {
+		Date curr = new Date(System.currentTimeMillis());
+		return Status.VALID.getCode().equals(this.status) && curr.before(this.validTo) && curr.after(this.validFrom);
+	}
 }

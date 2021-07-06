@@ -1,6 +1,6 @@
 package com.yiran.paychannel.enums;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * 用于codedTxn交互接口的事务编码

@@ -1,7 +1,8 @@
 package com.yiran.paychannel.domain;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.yiran.common.base.BaseEntity;
 
 /**
@@ -10,10 +11,9 @@ import com.yiran.common.base.BaseEntity;
  * @author yiran
  * @date 2019-04-19
  */
-public class TrFcTargetInstRelation extends BaseEntity
-{
+public class TrFcTargetInstRelation extends BaseEntity {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** 编号 */
 	private Integer id;
 	/** 渠道编码 */
@@ -21,39 +21,33 @@ public class TrFcTargetInstRelation extends BaseEntity
 	/** 目标机构编码 */
 	private String targetInstCode;
 
-	public void setId(Integer id) 
-	{
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Integer getId() 
-	{
+	public Integer getId() {
 		return id;
 	}
-	public void setFundChannelCode(String fundChannelCode) 
-	{
+
+	public void setFundChannelCode(String fundChannelCode) {
 		this.fundChannelCode = fundChannelCode;
 	}
 
-	public String getFundChannelCode() 
-	{
+	public String getFundChannelCode() {
 		return fundChannelCode;
 	}
-	public void setTargetInstCode(String targetInstCode) 
-	{
+
+	public void setTargetInstCode(String targetInstCode) {
 		this.targetInstCode = targetInstCode;
 	}
 
-	public String getTargetInstCode() 
-	{
+	public String getTargetInstCode() {
 		return targetInstCode;
 	}
 
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("id", getId())
-            .append("fundChannelCode", getFundChannelCode())
-            .append("targetInstCode", getTargetInstCode())
-            .toString();
-    }
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append("id", getId())
+				.append("fundChannelCode", getFundChannelCode()).append("targetInstCode", getTargetInstCode())
+				.toString();
+	}
 }

@@ -4,17 +4,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
 import com.yiran.paychannel.domain.TmFundChannelApi;
 import com.yiran.paychannel.enums.ChannelInfoExtKey;
 import com.yiran.paychannel.enums.FilterType;
-import com.yiran.paychannel.enums.RequestType;
 import com.yiran.paychannel.service.ITmFundChannelApiService;
 
 @Service("fundChannelApiFilter")

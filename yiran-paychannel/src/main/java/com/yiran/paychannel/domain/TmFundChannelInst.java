@@ -1,9 +1,11 @@
 package com.yiran.paychannel.domain;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-import com.yiran.common.base.BaseEntity;
 import java.util.Date;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import com.yiran.common.base.BaseEntity;
 
 /**
  * 提供资金渠道的机构表 tm_fund_channel_inst
@@ -11,10 +13,9 @@ import java.util.Date;
  * @author yiran
  * @date 2019-04-19
  */
-public class TmFundChannelInst extends BaseEntity
-{
+public class TmFundChannelInst extends BaseEntity {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** 机构代码 */
 	private String instCode;
 	/** 机构类型：BANK（银行），EPAY（电子支付公司） */
@@ -36,109 +37,92 @@ public class TmFundChannelInst extends BaseEntity
 	/** 扩展信息 */
 	private String extension;
 
-	public void setInstCode(String instCode) 
-	{
+	public void setInstCode(String instCode) {
 		this.instCode = instCode;
 	}
 
-	public String getInstCode() 
-	{
+	public String getInstCode() {
 		return instCode;
 	}
-	public void setInstType(String instType) 
-	{
+
+	public void setInstType(String instType) {
 		this.instType = instType;
 	}
 
-	public String getInstType() 
-	{
+	public String getInstType() {
 		return instType;
 	}
-	public void setInstName(String instName) 
-	{
+
+	public void setInstName(String instName) {
 		this.instName = instName;
 	}
 
-	public String getInstName() 
-	{
+	public String getInstName() {
 		return instName;
 	}
-	public void setInstBranchName(String instBranchName) 
-	{
+
+	public void setInstBranchName(String instBranchName) {
 		this.instBranchName = instBranchName;
 	}
 
-	public String getInstBranchName() 
-	{
+	public String getInstBranchName() {
 		return instBranchName;
 	}
-	public void setBankLineNo(String bankLineNo) 
-	{
+
+	public void setBankLineNo(String bankLineNo) {
 		this.bankLineNo = bankLineNo;
 	}
 
-	public String getBankLineNo() 
-	{
+	public String getBankLineNo() {
 		return bankLineNo;
 	}
-	public void setAreaCode(String areaCode) 
-	{
+
+	public void setAreaCode(String areaCode) {
 		this.areaCode = areaCode;
 	}
 
-	public String getAreaCode() 
-	{
+	public String getAreaCode() {
 		return areaCode;
 	}
-	public void setGmtCreate(Date gmtCreate) 
-	{
+
+	public void setGmtCreate(Date gmtCreate) {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public Date getGmtCreate() 
-	{
+	public Date getGmtCreate() {
 		return gmtCreate;
 	}
-	public void setGmtModified(Date gmtModified) 
-	{
+
+	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
 
-	public Date getGmtModified() 
-	{
+	public Date getGmtModified() {
 		return gmtModified;
 	}
-	public void setMemo(String memo) 
-	{
+
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
 
-	public String getMemo() 
-	{
+	public String getMemo() {
 		return memo;
 	}
-	public void setExtension(String extension) 
-	{
+
+	public void setExtension(String extension) {
 		this.extension = extension;
 	}
 
-	public String getExtension() 
-	{
+	public String getExtension() {
 		return extension;
 	}
 
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("instCode", getInstCode())
-            .append("instType", getInstType())
-            .append("instName", getInstName())
-            .append("instBranchName", getInstBranchName())
-            .append("bankLineNo", getBankLineNo())
-            .append("areaCode", getAreaCode())
-            .append("gmtCreate", getGmtCreate())
-            .append("gmtModified", getGmtModified())
-            .append("memo", getMemo())
-            .append("extension", getExtension())
-            .toString();
-    }
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append("instCode", getInstCode())
+				.append("instType", getInstType()).append("instName", getInstName())
+				.append("instBranchName", getInstBranchName()).append("bankLineNo", getBankLineNo())
+				.append("areaCode", getAreaCode()).append("gmtCreate", getGmtCreate())
+				.append("gmtModified", getGmtModified()).append("memo", getMemo()).append("extension", getExtension())
+				.toString();
+	}
 }

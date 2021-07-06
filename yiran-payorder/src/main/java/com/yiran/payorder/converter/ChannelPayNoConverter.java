@@ -1,6 +1,6 @@
 package com.yiran.payorder.converter;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.netfinworks.common.domain.Extension;
 import com.yiran.paychannel.enums.ExtensionKey;

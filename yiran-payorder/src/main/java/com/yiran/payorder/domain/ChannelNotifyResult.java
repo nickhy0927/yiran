@@ -8,7 +8,6 @@ import com.yiran.paychannel.enums.InstOrderStatus;
  * <p>处理完'渠道通知'返回给渠道的结果对象</p>
  */
 public class ChannelNotifyResult extends BaseResult {
-    private static final long serialVersionUID = 1L;
 
     /** 结果代码 */
     // 返回码. 可以定义0为成功，其他失败

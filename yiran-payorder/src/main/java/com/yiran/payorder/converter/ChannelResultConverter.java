@@ -9,7 +9,6 @@ import com.yiran.paychannel.enums.CurrencyType;
 import com.yiran.paychannel.enums.ExtensionKey;
 import com.yiran.paychannel.utils.MapUtil;
 import com.yiran.payorder.domain.ChannelFundResult;
-import com.yiran.payorder.domain.ChannelResult;
 import com.yiran.payorder.domain.PayInstOrder;
 import com.yiran.payorder.domain.PayInstOrderResult;
 import com.yiran.payorder.enums.InstOrderCompareStatus;
@@ -51,7 +50,7 @@ public class ChannelResultConverter {
         result.setInstOrderNo(src.getInstOrderNo());
         result.setInstSeqNo(src.getInstReturnOrderNo()); //银行生成的流水号
         result.setCompareStatus(InstOrderCompareStatus.AWAITING);
-        if(src.isSuccess()) {
+        if(src.getSuccess()) {
             result.setOperateStatus(InstResultOperateStatus.AWAITING);
         }else{
             result.setOperateStatus(InstResultOperateStatus.FAILURE);
@@ -68,8 +67,7 @@ public class ChannelResultConverter {
         } else if (src.getProcessTime() != null) {
             channelProcessTime = src.getProcessTime();
         }
-        result.getExtension().put(ExtensionKey.CHANNEL_TRANS_TIME.key,
-            DateUtil.format(channelProcessTime, DateUtil.shortFormat));
+        result.getExtension().put(ExtensionKey.CHANNEL_TRANS_TIME.key, DateUtil.format(channelProcessTime, DateUtil.shortFormat));
 
         if (src.getRealAmount() != null && src.getRealAmount().getAmount() != null) {
             result.setRealAmount(src.getRealAmount());
@@ -91,7 +89,5 @@ public class ChannelResultConverter {
         result.setFromHtml(src.getFromHtml());
         return result;
     }
-    
-    
    
 }

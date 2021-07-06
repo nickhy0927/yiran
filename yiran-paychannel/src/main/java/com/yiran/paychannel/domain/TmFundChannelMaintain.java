@@ -1,9 +1,11 @@
 package com.yiran.paychannel.domain;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-import com.yiran.common.base.BaseEntity;
 import java.util.Date;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
+import com.yiran.common.base.BaseEntity;
 
 /**
  * 资金渠道维护期表 tm_fund_channel_maintain
@@ -11,10 +13,9 @@ import java.util.Date;
  * @author yiran
  * @date 2019-04-19
  */
-public class TmFundChannelMaintain extends BaseEntity
-{
+public class TmFundChannelMaintain extends BaseEntity {
 	private static final long serialVersionUID = 1L;
-	
+
 	/** 维护ID */
 	private Integer maintainId;
 	/** 资金源编码 */
@@ -40,129 +41,109 @@ public class TmFundChannelMaintain extends BaseEntity
 	/** 机构代码 */
 	private String instCode;
 
-	public void setMaintainId(Integer maintainId) 
-	{
+	public void setMaintainId(Integer maintainId) {
 		this.maintainId = maintainId;
 	}
 
-	public Integer getMaintainId() 
-	{
+	public Integer getMaintainId() {
 		return maintainId;
 	}
-	public void setFundChannelCode(String fundChannelCode) 
-	{
+
+	public void setFundChannelCode(String fundChannelCode) {
 		this.fundChannelCode = fundChannelCode;
 	}
 
-	public String getFundChannelCode() 
-	{
+	public String getFundChannelCode() {
 		return fundChannelCode;
 	}
-	public void setFundChannelApi(String fundChannelApi) 
-	{
+
+	public void setFundChannelApi(String fundChannelApi) {
 		this.fundChannelApi = fundChannelApi;
 	}
 
-	public String getFundChannelApi() 
-	{
+	public String getFundChannelApi() {
 		return fundChannelApi;
 	}
-	public void setDescription(String description) 
-	{
+
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
-	public String getDescription() 
-	{
+	public String getDescription() {
 		return description;
 	}
-	public void setMaintainContent(String maintainContent) 
-	{
+
+	public void setMaintainContent(String maintainContent) {
 		this.maintainContent = maintainContent;
 	}
 
-	public String getMaintainContent() 
-	{
+	public String getMaintainContent() {
 		return maintainContent;
 	}
-	public void setGmtBegin(Date gmtBegin) 
-	{
+
+	public void setGmtBegin(Date gmtBegin) {
 		this.gmtBegin = gmtBegin;
 	}
 
-	public Date getGmtBegin() 
-	{
+	public Date getGmtBegin() {
 		return gmtBegin;
 	}
-	public void setGmtEnd(Date gmtEnd) 
-	{
+
+	public void setGmtEnd(Date gmtEnd) {
 		this.gmtEnd = gmtEnd;
 	}
 
-	public Date getGmtEnd() 
-	{
+	public Date getGmtEnd() {
 		return gmtEnd;
 	}
-	public void setFundChannelBackup(String fundChannelBackup) 
-	{
+
+	public void setFundChannelBackup(String fundChannelBackup) {
 		this.fundChannelBackup = fundChannelBackup;
 	}
 
-	public String getFundChannelBackup() 
-	{
+	public String getFundChannelBackup() {
 		return fundChannelBackup;
 	}
-	public void setGmtCreate(Date gmtCreate) 
-	{
+
+	public void setGmtCreate(Date gmtCreate) {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public Date getGmtCreate() 
-	{
+	public Date getGmtCreate() {
 		return gmtCreate;
 	}
-	public void setGmtModified(Date gmtModified) 
-	{
+
+	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
 
-	public Date getGmtModified() 
-	{
+	public Date getGmtModified() {
 		return gmtModified;
 	}
-	public void setMemo(String memo) 
-	{
+
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
 
-	public String getMemo() 
-	{
+	public String getMemo() {
 		return memo;
 	}
-	public void setInstCode(String instCode) 
-	{
+
+	public void setInstCode(String instCode) {
 		this.instCode = instCode;
 	}
 
-	public String getInstCode() 
-	{
+	public String getInstCode() {
 		return instCode;
 	}
 
-    public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("maintainId", getMaintainId())
-            .append("fundChannelCode", getFundChannelCode())
-            .append("fundChannelApi", getFundChannelApi())
-            .append("description", getDescription())
-            .append("maintainContent", getMaintainContent())
-            .append("gmtBegin", getGmtBegin())
-            .append("gmtEnd", getGmtEnd())
-            .append("fundChannelBackup", getFundChannelBackup())
-            .append("gmtCreate", getGmtCreate())
-            .append("gmtModified", getGmtModified())
-            .append("memo", getMemo())
-            .append("instCode", getInstCode())
-            .toString();
-    }
+	public String toString() {
+		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append("maintainId", getMaintainId())
+				.append("fundChannelCode", getFundChannelCode()).append("fundChannelApi", getFundChannelApi())
+				.append("description", getDescription()).append("maintainContent", getMaintainContent())
+				.append("gmtBegin", getGmtBegin()).append("gmtEnd", getGmtEnd())
+				.append("fundChannelBackup", getFundChannelBackup()).append("gmtCreate", getGmtCreate())
+				.append("gmtModified", getGmtModified()).append("memo", getMemo()).append("instCode", getInstCode())
+				.toString();
+	}
 }

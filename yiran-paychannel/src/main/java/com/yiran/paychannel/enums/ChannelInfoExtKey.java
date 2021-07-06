@@ -1,6 +1,6 @@
 package com.yiran.paychannel.enums;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public enum ChannelInfoExtKey {
     TARGET_INST("targetInst","目标机构"),

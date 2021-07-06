@@ -11,11 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import com.netfinworks.common.lang.StringUtil;
 import com.netfinworks.common.util.DateUtil;
 import com.yiran.paychannel.domain.TmFundChannel;
 import com.yiran.paychannel.domain.TmFundChannelApi;
@@ -238,7 +238,7 @@ public class ApiServiceImpl implements IApiService {
         }
         if (param != null) {
             Object apiType = param.get(ChannelInfoExtKey.API_TYPE.getCode());
-            if (apiType != null && StringUtil.isNotEmpty((String) apiType)
+            if (apiType != null && StringUtils.isNotEmpty((String) apiType)
                 && FundChannelApiType.getByCode((String) apiType) != null) {
                 return filterWithApiType(fundChannel,
                     FundChannelApiType.getByCode((String) apiType));
@@ -274,7 +274,7 @@ public class ApiServiceImpl implements IApiService {
         }
         if (param != null) {
             Object apiType = param.get(ChannelInfoExtKey.API_TYPE.getCode());
-            if (apiType != null && StringUtil.isNotEmpty((String) apiType)
+            if (apiType != null && StringUtils.isNotEmpty((String) apiType)
                 && FundChannelApiType.getByCode((String) apiType) != null) {
                 return filterWithApiType(apis, FundChannelApiType.getByCode((String) apiType));
             }
@@ -323,7 +323,7 @@ public class ApiServiceImpl implements IApiService {
             }
             if (channel.getChannelProperty().get(
                 ChannelInfoExtKey.AUTO_REFUND_AMOUNT_LIMIT.getCode()) != null
-                && StringUtil.isNotEmpty(channel.getChannelProperty()
+                && StringUtils.isNotEmpty(channel.getChannelProperty()
                     .get(ChannelInfoExtKey.AUTO_REFUND_AMOUNT_LIMIT.getCode()).getValue())) {
                 BigDecimal refundAmountLimit = new BigDecimal(channel.getChannelProperty()
                     .get(ChannelInfoExtKey.AUTO_REFUND_AMOUNT_LIMIT.getCode()).getValue());

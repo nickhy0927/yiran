@@ -3,7 +3,7 @@ package com.yiran.payorder.converter;
 import java.math.BigDecimal;
 import java.util.Calendar;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -77,7 +77,7 @@ public class OrderConverter {
         to.setOrgiPaymentSeqNo(order.getOrgiPaymentSeqNo());
         to.setOrgiSettlementId(order.getOrgiSettlementId());
         to.setPayMode(PayMode.getByCode(order.getPayMode()));
-        if (StringUtil.isNotEmpty(order.getExtension()))
+        if (StringUtils.isNotEmpty(order.getExtension()))
             to.setExtension(CommonConverter.convertFromDb(order.getExtension()));
         to.setFundChannelCode(to.getExtension().get(ExtensionKey.FUNDS_CHANNEL.key));
         switch (to.getBizType()) {

@@ -1,7 +1,13 @@
 package com.yiran.payorder.domain;
 
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import com.netfinworks.common.util.money.Money;
-import com.yiran.common.base.BaseEntity;
 import com.yiran.paychannel.enums.BizType;
 import com.yiran.paychannel.enums.CurrencyType;
 import com.yiran.paychannel.enums.PayMode;
@@ -11,32 +17,23 @@ import com.yiran.payorder.enums.NotifyStatus;
 import com.yiran.payorder.enums.PayOrderConfirmStatus;
 import com.yiran.payorder.enums.PayOrderStatus;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
-
 /**
  * 渠道支付订单表 channel_pay_order
  * 
  * @author yiran
  * @date 2019-07-13
  */
-public class ChannelPayOrder implements BasicConstant
-{
-	private static final long serialVersionUID = 1L;
+public class ChannelPayOrder implements BasicConstant {
 	/** 资金渠道，兼容用 */
-    private String  fundChannelCode;
-	/** 渠道流水号  yyyymmdd+6位随机数*/
+	private String fundChannelCode;
+	/** 渠道流水号 yyyymmdd+6位随机数 */
 	private String paySeqNo;
 	/** 支付流水号 */
 	private String paymentSeqNo;
 	/** 请求类型 */
-    private RequestType  requestType;
+	private RequestType requestType;
 	/** 业务类型 */
-    private BizType bizType;
+	private BizType bizType;
 	/** 请求批次号 */
 	private String requestBatchNo;
 	/** 订单类型：I（入款），B（退款），O（出款） */
@@ -48,9 +45,9 @@ public class ChannelPayOrder implements BasicConstant
 	/** 会员ID,现阶段是PT帐号 */
 	private String memberId;
 	/** 金额 */
-	private Money                 amount    = new Money(ZERO_MONEY_STRING);
+	private Money amount = new Money(ZERO_MONEY_STRING);
 	/** 币种 */
-	private CurrencyType          currency  = CurrencyType.CNY;
+	private CurrencyType currency = CurrencyType.CNY;
 	/** 机构编码 */
 	private String instCode;
 	/** 支付结果通知状态：S（通知成功），F（通知失败），N（不通知） */
@@ -84,266 +81,237 @@ public class ChannelPayOrder implements BasicConstant
 	/** 期望时间 */
 	private Date expectTime;
 	/** 扩展信息 */
-    private Map<String, String>   extension = new HashMap<String, String>();
+	private Map<String, String> extension = new HashMap<String, String>();
 	/** 结算id */
 	private String settlementId;
 	/** 原订单结算id */
 	private String orgiSettlementId;
 
-	public void setPaySeqNo(String paySeqNo) 
-	{
+	public void setPaySeqNo(String paySeqNo) {
 		this.paySeqNo = paySeqNo;
 	}
 
-	public String getPaySeqNo() 
-	{
+	public String getPaySeqNo() {
 		return paySeqNo;
 	}
-	public void setPaymentSeqNo(String paymentSeqNo) 
-	{
+
+	public void setPaymentSeqNo(String paymentSeqNo) {
 		this.paymentSeqNo = paymentSeqNo;
 	}
 
-	public String getPaymentSeqNo() 
-	{
+	public String getPaymentSeqNo() {
 		return paymentSeqNo;
 	}
-	public void setRequestBatchNo(String requestBatchNo) 
-	{
+
+	public void setRequestBatchNo(String requestBatchNo) {
 		this.requestBatchNo = requestBatchNo;
 	}
 
-	public String getRequestBatchNo() 
-	{
+	public String getRequestBatchNo() {
 		return requestBatchNo;
 	}
-	public void setOrderType(String orderType) 
-	{
+
+	public void setOrderType(String orderType) {
 		this.orderType = orderType;
 	}
 
-	public String getOrderType() 
-	{
+	public String getOrderType() {
 		return orderType;
 	}
-	public void setProductCode(String productCode) 
-	{
+
+	public void setProductCode(String productCode) {
 		this.productCode = productCode;
 	}
 
-	public String getProductCode() 
-	{
+	public String getProductCode() {
 		return productCode;
 	}
-	public void setPaymentCode(String paymentCode) 
-	{
+
+	public void setPaymentCode(String paymentCode) {
 		this.paymentCode = paymentCode;
 	}
 
-	public String getPaymentCode() 
-	{
+	public String getPaymentCode() {
 		return paymentCode;
 	}
-	public void setMemberId(String memberId) 
-	{
+
+	public void setMemberId(String memberId) {
 		this.memberId = memberId;
 	}
 
-	public String getMemberId() 
-	{
+	public String getMemberId() {
 		return memberId;
 	}
-	public void setAmount(Money amount) 
-	{
+
+	public void setAmount(Money amount) {
 		this.amount = amount;
 	}
 
-	public Money getAmount() 
-	{
+	public Money getAmount() {
 		return amount;
 	}
-	public void setCurrency(CurrencyType currency) 
-	{
+
+	public void setCurrency(CurrencyType currency) {
 		this.currency = currency;
 	}
 
-	public CurrencyType getCurrency() 
-	{
+	public CurrencyType getCurrency() {
 		return currency;
 	}
-	public void setInstCode(String instCode) 
-	{
+
+	public void setInstCode(String instCode) {
 		this.instCode = instCode;
 	}
 
-	public String getInstCode() 
-	{
+	public String getInstCode() {
 		return instCode;
 	}
-	public void setPaymentNotifyStatus(NotifyStatus paymentNotifyStatus) 
-	{
+
+	public void setPaymentNotifyStatus(NotifyStatus paymentNotifyStatus) {
 		this.paymentNotifyStatus = paymentNotifyStatus;
 	}
 
-	public NotifyStatus getPaymentNotifyStatus() 
-	{
+	public NotifyStatus getPaymentNotifyStatus() {
 		return paymentNotifyStatus;
 	}
-	public void setCommunicateType(String communicateType) 
-	{
+
+	public void setCommunicateType(String communicateType) {
 		this.communicateType = communicateType;
 	}
 
-	public String getCommunicateType() 
-	{
+	public String getCommunicateType() {
 		return communicateType;
 	}
-	public void setStatus(PayOrderStatus status) 
-	{
+
+	public void setStatus(PayOrderStatus status) {
 		this.status = status;
 	}
 
-	public PayOrderStatus getStatus() 
-	{
+	public PayOrderStatus getStatus() {
 		return status;
 	}
-	public void setOperator(String operator) 
-	{
+
+	public void setOperator(String operator) {
 		this.operator = operator;
 	}
 
-	public String getOperator() 
-	{
+	public String getOperator() {
 		return operator;
 	}
-	public void setGmtSubmit(Date gmtSubmit) 
-	{
+
+	public void setGmtSubmit(Date gmtSubmit) {
 		this.gmtSubmit = gmtSubmit;
 	}
 
-	public Date getGmtSubmit() 
-	{
+	public Date getGmtSubmit() {
 		return gmtSubmit;
 	}
-	public void setInstOrderId(Integer instOrderId) 
-	{
+
+	public void setInstOrderId(Integer instOrderId) {
 		this.instOrderId = instOrderId;
 	}
 
-	public Integer getInstOrderId() 
-	{
+	public Integer getInstOrderId() {
 		return instOrderId;
 	}
-	public void setGmtCreate(Date gmtCreate) 
-	{
+
+	public void setGmtCreate(Date gmtCreate) {
 		this.gmtCreate = gmtCreate;
 	}
 
-	public Date getGmtCreate() 
-	{
+	public Date getGmtCreate() {
 		return gmtCreate;
 	}
-	public void setBizDate(Date bizDate) 
-	{
+
+	public void setBizDate(Date bizDate) {
 		this.bizDate = bizDate;
 	}
 
-	public Date getBizDate() 
-	{
+	public Date getBizDate() {
 		return bizDate;
 	}
-	public void setGmtModified(Date gmtModified) 
-	{
+
+	public void setGmtModified(Date gmtModified) {
 		this.gmtModified = gmtModified;
 	}
 
-	public Date getGmtModified() 
-	{
+	public Date getGmtModified() {
 		return gmtModified;
 	}
-	public void setMemo(String memo) 
-	{
+
+	public void setMemo(String memo) {
 		this.memo = memo;
 	}
 
-	public String getMemo() 
-	{
+	public String getMemo() {
 		return memo;
 	}
-	public void setConfirmStatus(PayOrderConfirmStatus confirmStatus) 
-	{
+
+	public void setConfirmStatus(PayOrderConfirmStatus confirmStatus) {
 		this.confirmStatus = confirmStatus;
 	}
 
-	public PayOrderConfirmStatus getConfirmStatus() 
-	{
+	public PayOrderConfirmStatus getConfirmStatus() {
 		return confirmStatus;
 	}
-	public void setPayMode(PayMode payMode) 
-	{
+
+	public void setPayMode(PayMode payMode) {
 		this.payMode = payMode;
 	}
 
-	public PayMode getPayMode() 
-	{
+	public PayMode getPayMode() {
 		return payMode;
 	}
-	public void setSubmitBatchNo(String submitBatchNo) 
-	{
+
+	public void setSubmitBatchNo(String submitBatchNo) {
 		this.submitBatchNo = submitBatchNo;
 	}
 
-	public String getSubmitBatchNo() 
-	{
+	public String getSubmitBatchNo() {
 		return submitBatchNo;
 	}
-	public void setOrgiPaymentSeqNo(String orgiPaymentSeqNo) 
-	{
+
+	public void setOrgiPaymentSeqNo(String orgiPaymentSeqNo) {
 		this.orgiPaymentSeqNo = orgiPaymentSeqNo;
 	}
 
-	public String getOrgiPaymentSeqNo() 
-	{
+	public String getOrgiPaymentSeqNo() {
 		return orgiPaymentSeqNo;
 	}
-	public void setExpectTime(Date expectTime) 
-	{
+
+	public void setExpectTime(Date expectTime) {
 		this.expectTime = expectTime;
 	}
 
-	public Date getExpectTime() 
-	{
+	public Date getExpectTime() {
 		return expectTime;
 	}
-	public void setExtension(Map<String, String> extension) 
-	{
+
+	public void setExtension(Map<String, String> extension) {
 		this.extension = extension;
 	}
 
-	public Map<String, String> getExtension() 
-	{
+	public Map<String, String> getExtension() {
 		return extension;
 	}
-	public void setSettlementId(String settlementId) 
-	{
+
+	public void setSettlementId(String settlementId) {
 		this.settlementId = settlementId;
 	}
 
-	public String getSettlementId() 
-	{
+	public String getSettlementId() {
 		return settlementId;
 	}
-	public void setOrgiSettlementId(String orgiSettlementId) 
-	{
+
+	public void setOrgiSettlementId(String orgiSettlementId) {
 		this.orgiSettlementId = orgiSettlementId;
 	}
 
-	public String getOrgiSettlementId() 
-	{
+	public String getOrgiSettlementId() {
 		return orgiSettlementId;
 	}
 
-    public BizType getBizType() {
+	public BizType getBizType() {
 		return bizType;
 	}
 
@@ -358,7 +326,7 @@ public class ChannelPayOrder implements BasicConstant
 	public void setFundChannelCode(String fundChannelCode) {
 		this.fundChannelCode = fundChannelCode;
 	}
-	
+
 	public RequestType getRequestType() {
 		return requestType;
 	}
@@ -368,38 +336,20 @@ public class ChannelPayOrder implements BasicConstant
 	}
 
 	public String toString() {
-        return new ToStringBuilder(this,ToStringStyle.MULTI_LINE_STYLE)
-            .append("fundChannelCode", getFundChannelCode())
-            .append("paySeqNo", getPaySeqNo())
-            .append("paymentSeqNo", getPaymentSeqNo())
-            .append("requestBatchNo", getRequestBatchNo())
-            .append("orderType", getOrderType())
-            .append("bizType", getBizType().getCode())
-            .append("requestType", getRequestType().getCode())
-            .append("productCode", getProductCode())
-            .append("paymentCode", getPaymentCode())
-            .append("memberId", getMemberId())
-            .append("amount", getAmount())
-            .append("currency", getCurrency().getCode())
-            .append("instCode", getInstCode())
-            .append("paymentNotifyStatus", getPaymentNotifyStatus())
-            .append("communicateType", getCommunicateType())
-            .append("status", getStatus())
-            .append("operator", getOperator())
-            .append("gmtSubmit", getGmtSubmit())
-            .append("instOrderId", getInstOrderId())
-            .append("gmtCreate", getGmtCreate())
-            .append("bizDate", getBizDate())
-            .append("gmtModified", getGmtModified())
-            .append("memo", getMemo())
-            .append("confirmStatus", getConfirmStatus().getCode())
-            .append("payMode", getPayMode().getCode())
-            .append("submitBatchNo", getSubmitBatchNo())
-            .append("orgiPaymentSeqNo", getOrgiPaymentSeqNo())
-            .append("expectTime", getExpectTime())
-            .append("extension", getExtension())
-            .append("settlementId", getSettlementId())
-            .append("orgiSettlementId", getOrgiSettlementId())
-            .toString();
-    }
+		return new ToStringBuilder(this, ToStringStyle.MULTI_LINE_STYLE).append("fundChannelCode", getFundChannelCode())
+				.append("paySeqNo", getPaySeqNo()).append("paymentSeqNo", getPaymentSeqNo())
+				.append("requestBatchNo", getRequestBatchNo()).append("orderType", getOrderType())
+				.append("bizType", getBizType().getCode()).append("requestType", getRequestType().getCode())
+				.append("productCode", getProductCode()).append("paymentCode", getPaymentCode())
+				.append("memberId", getMemberId()).append("amount", getAmount())
+				.append("currency", getCurrency().getCode()).append("instCode", getInstCode())
+				.append("paymentNotifyStatus", getPaymentNotifyStatus()).append("communicateType", getCommunicateType())
+				.append("status", getStatus()).append("operator", getOperator()).append("gmtSubmit", getGmtSubmit())
+				.append("instOrderId", getInstOrderId()).append("gmtCreate", getGmtCreate())
+				.append("bizDate", getBizDate()).append("gmtModified", getGmtModified()).append("memo", getMemo())
+				.append("confirmStatus", getConfirmStatus().getCode()).append("payMode", getPayMode().getCode())
+				.append("submitBatchNo", getSubmitBatchNo()).append("orgiPaymentSeqNo", getOrgiPaymentSeqNo())
+				.append("expectTime", getExpectTime()).append("extension", getExtension())
+				.append("settlementId", getSettlementId()).append("orgiSettlementId", getOrgiSettlementId()).toString();
+	}
 }
